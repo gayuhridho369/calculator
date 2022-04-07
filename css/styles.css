@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Maven Pro', sans-serif;
+    background: linear-gradient(#00AAFF, #0741ac);
+    color: #e0e0e0;
+}
+
+.container {
+    min-height: 100vh;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    padding: 60px 50px;
+    background: rgba(255, 255, 255, .5);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 60px);
+    grid-gap: 10px;
+}
+
+.calculator-grid button {
+    border-radius: 10px;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #212121;
+    background: rgba(255, 255, 255, .5);
+}
+
+.calculator-grid button:active {
+    background: rgba(255, 255, 255, .95);
+}
+
+.calculator-grid button.operation,
+.calculator-grid button.equal {
+    font-size: 1.25rem;
+    color: white;
+    background: rgba(7, 65, 172, .5);
+}
+
+
+.calculator-grid button.operation:active,
+.calculator-grid button.equal:active {
+    background: rgba(7, 65, 172, .95);
+}
+
+.calculator-grid .span-two {
+    grid-column: span 2;
+}
+
+.calculator-grid .output {
+    grid-column: 1 / -1;
+    height: 120px;
+    overflow: hidden;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .5);
+}
+
+.output .previous-operand {
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.calculator-grid button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media (max-width: 420px) {
+    .card {
+        padding: 45px 35px;
+    }
+
+    .calculator-grid {
+        grid-template-columns: repeat(4, 50px);
+        grid-template-rows: minmax(100px, auto) repeat(5, 50px);
+        grid-gap: 7.5px;
+    }
+
+    .calculator-grid button {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    .calculator-grid button.operation,
+    .calculator-grid button.equal {
+        font-size: 1rem;
+    }
+
+    .calculator-grid .output {
+        height: 110px;
+        padding: 4px 10px;
+        margin-bottom: 10px;
+    }
+
+    .output .previous-operand {
+        font-size: 1.25rem;
+    }
+
+    .output .current-operand {
+        font-size: 1.75rem;
+        font-weight: 400;
+    }
+}
